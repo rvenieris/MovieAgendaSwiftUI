@@ -12,81 +12,16 @@ struct FeedView: View {
     
     var body: some View {
         
-        ScrollView{
-            VStack{
-                Text("Movie List")
-                
-                    .font(.title.bold())
-                    .foregroundColor(.black)
-                
-                
-                ForEach(movieList) { list in
-                    Divider()
-                        .padding()
-                    AsyncImage(url: list.posterURL) { result in
-                        if let posterImage = result.image {
-                            VStack{
-                                ZStack{
-                                    
-                                    
-                                    ZStack(alignment: .top) {
-                                        
-                                        posterImage
-                                            .resizable()
-                                            .scaledToFit()
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                                            .background {
-                                                Rectangle()
-                                                    .foregroundColor(.white)
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                    .shadow(color: Color ("BlueShadow").opacity(0.3), radius: 10)
-                                                    .padding(-10)
-                                            }
-                                            .padding(.top, 35)
-                                        
-                                        
-                                        
-                                        Text(list.name ?? "")
-                                            .padding(15)
-                                            .frame(width: 250)
-                                            .multilineTextAlignment(.center)
-                                            .font(.callout.bold())
-                                            .foregroundColor(.blue)
-                                            .background(Color.white, in: RoundedRectangle(cornerRadius: 5))
-                                            .shadow(color: Color ("BlueShadow").opacity(0.3), radius: 10)
-                                        
-                                        
-                                        
-                                        
-                                    }
-                                    .padding(35)
-                                    
-                                    
-                                }
-                                Text("Sinopse".uppercased())
-                                    .font(.headline.bold())
-                                    .foregroundColor(.blue)
-                                
-                                Text(list.overview.wrapped)
-                                    .padding(.top,7)
-                                    .padding(.horizontal,20)
-                                    .lineLimit(3)
-                                    .foregroundColor(.gray)
-                                    .multilineTextAlignment(.leading)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
-                            }
-                        } else if result.error != nil {
-                            Image(systemName: "exclamationmark.circle")
-                                .resizable()
-                                .scaledToFit()
-                            
-                        } else {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                        }
-                        
-                    }
+        VStack {
+            Text("Movie List")
+                .font(.title.bold())
+                .foregroundColor(.black)
+            ScrollView{
+                ForEach(movieList) { item in
+                    FeedCover(url: item.posterURL, title: item.wrappedTitle).padding()
+                    Divider().padding()
+                    
+                    
                 }
             }
         }
@@ -98,25 +33,7 @@ struct FeedView_Previews: PreviewProvider {
         var localList:[MDB.Media] = localMovieList
         localList.append(contentsOf: localList)
         localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
-//        localList.append(contentsOf: localList)
+        
         return localList
     }()
     static var previews: some View {
@@ -133,7 +50,7 @@ var localMovieList:[MDB.Media] = [
               mediaType: .tv,
               voteAverage: 5.0,
               voteCount: 100),
-
+    
     MDB.Media(id: 94997,
               name: "House of the Dragon",
               backdropPath: "/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg",
@@ -142,7 +59,7 @@ var localMovieList:[MDB.Media] = [
               mediaType: .tv,
               voteAverage: 5.0,
               voteCount: 100),
-
+    
     MDB.Media(id: 92783,
               name: "She-Hulk: Attorney at Law",
               backdropPath: "/9GvhICFMiRQA82vS6ydkXxeEkrd.jpg",
@@ -150,7 +67,7 @@ var localMovieList:[MDB.Media] = [
               posterPath: "/hJfI6AGrmr4uSHRccfJuSsapvOb.jpg",
               mediaType: .tv,
               voteAverage: 5.0, voteCount: 100),
-
+    
     MDB.Media(id: 30984,
               name: "Bleach",
               backdropPath: "/qtfMr08KQsWXnCHY0a96N8NpQ2l.jpg",
@@ -165,4 +82,4 @@ var localMovieList:[MDB.Media] = [
               posterPath: "/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg",
               mediaType: .tv,
               voteAverage: 5.0, voteCount: 100),
-    ]
+]

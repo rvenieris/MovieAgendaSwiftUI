@@ -34,7 +34,8 @@ extension MDB {
         
         public var posterURL: URL? {return MDB.Request.fullPath(for: posterPath)}
         public var backdropURL: URL? {return MDB.Request.fullPath(for: backdropPath)}
-        
+        public var wrappedTitle: String {name ?? originalName ?? title ?? originalTitle ?? "No Title"}
+
         enum CodingKeys: String, CodingKey {
             case id = "id"
             case name = "name"
