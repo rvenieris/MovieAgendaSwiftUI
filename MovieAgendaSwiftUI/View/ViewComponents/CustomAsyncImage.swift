@@ -26,7 +26,7 @@ struct CustomAsyncImage: View {
         }
     }
     
-    var errorImage = Image(systemName: "exclamationmark.circle")
+    var errorImage = Image("No_Image_Available")
     
 }
 

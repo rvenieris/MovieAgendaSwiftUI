@@ -11,20 +11,39 @@ struct FeedView: View {
     @State var movieList:[MDB.Media]
     
     var body: some View {
-        
+        NavigationView {
+            VStack {
+                feedTitle
+                ScrollView {
+                    ForEach($movieList) { $item in
+                        NavigationLink(destination: FeedDetail(item: $item)) {
+                            FeedCover(url: item.posterURL, title: item.wrappedTitle)
+                        }.padding()
+                        Divider().padding()
+                    }
+                }.padding(.top, -12)
+            }
+        }
+    }
+    
+    var feedTitle: some View {
         VStack {
             Text("Movie List")
                 .font(.title.bold())
                 .foregroundColor(.black)
-            ScrollView{
-                ForEach(movieList) { item in
-                    FeedCover(url: item.posterURL, title: item.wrappedTitle).padding()
-                    Divider().padding()
-                    
-                    
-                }
-            }
+            Divider().padding(.vertical, -5)
         }
+    }
+    
+    var feed: some View {
+        ScrollView {
+            ForEach($movieList) { $item in
+                NavigationLink(destination: FeedDetail(item: $item)) {
+                    FeedCover(url: item.posterURL, title: item.wrappedTitle)
+                }.padding()
+                Divider().padding()
+            }
+        }.padding(.top, -12)
     }
 }
 
@@ -38,6 +57,17 @@ struct FeedView_Previews: PreviewProvider {
     }()
     static var previews: some View {
         FeedView(movieList: localList)
+            .preferredColorScheme(.light)
+            .environment(\.sizeCategory, .extraSmall)
+
+        FeedView(movieList: localList)
+        .preferredColorScheme(.dark)
+        .environment(\.sizeCategory, .extraExtraExtraLarge)
+        
+        FeedView(movieList: localList)
+        .preferredColorScheme(.dark)
+        .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
+
     }
 }
 
