@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieAgendaSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeedView(movieList: localMovieList)
         }
     }
 }

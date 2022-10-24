@@ -3,22 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C862BDC2905EC5200FA9AC5 /* MDBGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C862BD92905EC5200FA9AC5 /* MDBGenre.swift */; };
+		8C862BDD2905EC5200FA9AC5 /* MDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C862BDA2905EC5200FA9AC5 /* MDBRequest.swift */; };
+		8C862BDE2905EC5200FA9AC5 /* MDBResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C862BDB2905EC5200FA9AC5 /* MDBResult.swift */; };
 		8C877F8529018AEA00599B40 /* MovieAgendaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F8429018AEA00599B40 /* MovieAgendaSwiftUIApp.swift */; };
-		8C877F8729018AEA00599B40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F8629018AEA00599B40 /* ContentView.swift */; };
+		8C877F8729018AEA00599B40 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F8629018AEA00599B40 /* FeedView.swift */; };
 		8C877F8929018AED00599B40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C877F8829018AED00599B40 /* Assets.xcassets */; };
 		8C877F8C29018AED00599B40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C877F8B29018AED00599B40 /* Preview Assets.xcassets */; };
+		8C877F93290192A800599B40 /* FeedTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F92290192A700599B40 /* FeedTitle.swift */; };
+		8C877F9E290196C300599B40 /* ModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F95290196C300599B40 /* ModelExtensions.swift */; };
+		8C877FA3290196C300599B40 /* MDBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F9B290196C300599B40 /* MDBServices.swift */; };
+		8C877FA5290196C300599B40 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C877F9D290196C300599B40 /* Secrets.swift */; };
+		8C877FA82901973800599B40 /* CodableExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 8C877FA72901973800599B40 /* CodableExtensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C862BD92905EC5200FA9AC5 /* MDBGenre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGenre.swift; sourceTree = "<group>"; };
+		8C862BDA2905EC5200FA9AC5 /* MDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBRequest.swift; sourceTree = "<group>"; };
+		8C862BDB2905EC5200FA9AC5 /* MDBResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBResult.swift; sourceTree = "<group>"; };
 		8C877F8129018AEA00599B40 /* MovieAgendaSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAgendaSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C877F8429018AEA00599B40 /* MovieAgendaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAgendaSwiftUIApp.swift; sourceTree = "<group>"; };
-		8C877F8629018AEA00599B40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8C877F8629018AEA00599B40 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8C877F8829018AED00599B40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C877F8B29018AED00599B40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8C877F92290192A700599B40 /* FeedTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTitle.swift; sourceTree = "<group>"; };
+		8C877F95290196C300599B40 /* ModelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtensions.swift; sourceTree = "<group>"; };
+		8C877F9B290196C300599B40 /* MDBServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBServices.swift; sourceTree = "<group>"; };
+		8C877F9D290196C300599B40 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +41,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C877FA82901973800599B40 /* CodableExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C862BD42905E62600FA9AC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C877F8629018AEA00599B40 /* FeedView.swift */,
+				8C877F92290192A700599B40 /* FeedTitle.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8C877F7829018AEA00599B40 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				8C877F8429018AEA00599B40 /* MovieAgendaSwiftUIApp.swift */,
-				8C877F8629018AEA00599B40 /* ContentView.swift */,
+				8C862BD42905E62600FA9AC5 /* View */,
+				8C877F94290196C300599B40 /* Model */,
+				8C877F99290196C300599B40 /* Network */,
 				8C877F8829018AED00599B40 /* Assets.xcassets */,
 				8C877F8A29018AED00599B40 /* Preview Content */,
 			);
@@ -65,6 +92,26 @@
 				8C877F8B29018AED00599B40 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8C877F94290196C300599B40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C862BDA2905EC5200FA9AC5 /* MDBRequest.swift */,
+				8C862BDB2905EC5200FA9AC5 /* MDBResult.swift */,
+				8C862BD92905EC5200FA9AC5 /* MDBGenre.swift */,
+				8C877F95290196C300599B40 /* ModelExtensions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C877F99290196C300599B40 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8C877F9D290196C300599B40 /* Secrets.swift */,
+				8C877F9B290196C300599B40 /* MDBServices.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +130,9 @@
 			dependencies = (
 			);
 			name = MovieAgendaSwiftUI;
+			packageProductDependencies = (
+				8C877FA72901973800599B40 /* CodableExtensions */,
+			);
 			productName = MovieAgendaSwiftUI;
 			productReference = 8C877F8129018AEA00599B40 /* MovieAgendaSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -103,7 +153,7 @@
 				};
 			};
 			buildConfigurationList = 8C877F7C29018AEA00599B40 /* Build configuration list for PBXProject "MovieAgendaSwiftUI" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -111,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 8C877F7829018AEA00599B40;
+			packageReferences = (
+				8C877FA62901973800599B40 /* XCRemoteSwiftPackageReference "CodableExtensions" */,
+			);
 			productRefGroup = 8C877F8229018AEA00599B40 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C877F8729018AEA00599B40 /* ContentView.swift in Sources */,
+				8C877F8729018AEA00599B40 /* FeedView.swift in Sources */,
+				8C877F9E290196C300599B40 /* ModelExtensions.swift in Sources */,
+				8C862BDC2905EC5200FA9AC5 /* MDBGenre.swift in Sources */,
+				8C877F93290192A800599B40 /* FeedTitle.swift in Sources */,
+				8C877FA3290196C300599B40 /* MDBServices.swift in Sources */,
 				8C877F8529018AEA00599B40 /* MovieAgendaSwiftUIApp.swift in Sources */,
+				8C877FA5290196C300599B40 /* Secrets.swift in Sources */,
+				8C862BDE2905EC5200FA9AC5 /* MDBResult.swift in Sources */,
+				8C862BDD2905EC5200FA9AC5 /* MDBRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C877FA62901973800599B40 /* XCRemoteSwiftPackageReference "CodableExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rvenieris/CodableExtensions.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C877FA72901973800599B40 /* CodableExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C877FA62901973800599B40 /* XCRemoteSwiftPackageReference "CodableExtensions" */;
+			productName = CodableExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C877F7929018AEA00599B40 /* Project object */;
 }
